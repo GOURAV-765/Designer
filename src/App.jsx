@@ -96,7 +96,7 @@ export default function App() {
   // Form state
   const [formName, setFormName] = useState('');
   const [formEmail, setFormEmail] = useState('');
-  const [formProjectType, setFormProjectType] = useState('brand');
+  const [formProjectType, setFormProjectType] = useState('graphic');
   const [formMessage, setFormMessage] = useState('');
   
   // Form errors & success
@@ -167,8 +167,8 @@ export default function App() {
     document.addEventListener('mouseover', handleMouseOver);
     document.addEventListener('mouseout', handleMouseOut);
     return () => {
-      document.remove('mouseover', handleMouseOver);
-      document.remove('mouseout', handleMouseOut);
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseout', handleMouseOut);
     };
   }, []);
 
@@ -265,7 +265,7 @@ export default function App() {
       setFormName('');
       setFormEmail('');
       setFormMessage('');
-      setFormProjectType('brand');
+      setFormProjectType('graphic');
 
       setTimeout(() => {
         setFormSuccess(false);
@@ -303,7 +303,7 @@ export default function App() {
       <header id="mainHeader" className={isScrolled ? 'scrolled' : ''}>
         <div className="container nav-container">
           <a href="#home" className="logo" id="logoLink">
-            ALEX<span>.</span>DESIGN
+            DEV<span>.</span>DESIGN
           </a>
           
           <nav className={`nav-menu ${isMenuOpen ? 'open' : ''}`} id="navMenu">
@@ -334,13 +334,13 @@ export default function App() {
         
         <div className="container hero-container">
           <div className="hero-content">
-            <span className="hero-tagline scroll-reveal">CREATIVE GRAPHIC & VISUAL DESIGNER</span>
+            <span className="hero-tagline scroll-reveal">GRAPHIC & MOTION GRAPHICS DESIGNER</span>
             <h1 className="hero-title scroll-reveal">
               Shaping Ideas Into <br />
               <span className="text-gradient">Visual Realities</span>
             </h1>
             <p className="hero-desc scroll-reveal">
-              Hi, I'm Alex. A multidisciplinary designer specializing in building premium brand identities, futuristic 3D renders, editorial layouts, and intuitive user experiences.
+              Hi, I'm Dev Duggal. A Graphic Designer and Motion Graphics Designer creating impactful brands, engaging social media creatives, and visually compelling digital experiences.
             </p>
             <div className="hero-cta scroll-reveal">
               <a href="#portfolio" className="btn btn-primary">View My Work <i className="fa-solid fa-arrow-right"></i></a>
@@ -370,12 +370,12 @@ export default function App() {
         </div>
         <a href="#about" className="scroll-down-indicator" aria-label="Scroll down to About section">
           <span>Scroll Down</span>
-          <i class="fa-solid fa-chevron-down"></i>
+          <i className="fa-solid fa-chevron-down"></i>
         </a>
       </section>
 
       {/* About Section */}
-      <section id="about" class="about-section section-padding">
+      <section id="about" className="about-section section-padding">
         <div className="container">
           <div className="section-header text-center">
             <span className="section-subtitle">Biography</span>
@@ -386,7 +386,7 @@ export default function App() {
           <div className="about-grid">
             <div className="about-img-col scroll-reveal">
               <div className="about-img-frame">
-                <img src="assets/designer_avatar.png" alt="Alex Morgan - Graphic Designer" className="about-img" />
+                <img src="assets/designer_avatar.png" alt="Dev Duggal - Graphic & Motion Graphics Designer" className="about-img" />
                 <div className="frame-backdrop"></div>
               </div>
             </div>
@@ -445,11 +445,11 @@ export default function App() {
                 <h4 className="tech-title">Tools of the Trade:</h4>
                 <div className="tech-icons">
                   <div className="tech-tag" title="Adobe Illustrator"><i className="fa-solid fa-bezier-curve"></i> Illustrator</div>
-                  <div className="tech-tag" title="Adobe Photoshop"><i class="fa-solid fa-crop-simple"></i> Photoshop</div>
+                  <div className="tech-tag" title="Adobe Photoshop"><i className="fa-solid fa-crop-simple"></i> Photoshop</div>
                   <div className="tech-tag" title="Figma"><i className="fa-brands fa-figma"></i> Figma</div>
                   <div className="tech-tag" title="Blender"><i className="fa-solid fa-cube"></i> Blender</div>
-                  <div className="tech-tag" title="Adobe InDesign"><i class="fa-solid fa-columns-3"></i> InDesign</div>
-                  <div className="tech-tag" title="Adobe After Effects"><i class="fa-solid fa-film"></i> After Effects</div>
+                  <div className="tech-tag" title="Adobe InDesign"><i className="fa-solid fa-columns-3"></i> InDesign</div>
+                  <div className="tech-tag" title="Adobe After Effects"><i className="fa-solid fa-film"></i> After Effects</div>
                 </div>
               </div>
             </div>
@@ -517,41 +517,61 @@ export default function App() {
           <div className="services-grid">
             <div className="service-card scroll-reveal">
               <div className="service-icon">
-                <i className="fa-solid fa-bezier-curve"></i>
+                <i className="fa-solid fa-palette"></i>
               </div>
-              <h3 className="service-title">Brand Identity Design</h3>
+              <h3 className="service-title">Graphic Design</h3>
               <p className="service-desc">
-                Developing cohesive brand strategies including unique logo designs, complete visual identity systems, type scale definitions, and extensive corporate style guides.
+                Creating visually stunning layout concepts, digital artwork, and vector assets customized to align with and amplify your brand's unique aesthetics.
               </p>
             </div>
             
             <div className="service-card scroll-reveal">
               <div className="service-icon">
-                <i className="fa-solid fa-cube"></i>
+                <i className="fa-solid fa-tags"></i>
               </div>
-              <h3 className="service-title">3D Illustration & Modeling</h3>
+              <h3 className="service-title">Branding & Logo Design</h3>
               <p className="service-desc">
-                Crafting eye-catching three-dimensional visuals, product models, abstract cosmic scenes, and styled graphics that enhance online presence and advertisements.
+                Developing comprehensive brand identities, professional logo suites, typography systems, color guidelines, and cohesive marketing templates.
               </p>
             </div>
             
             <div className="service-card scroll-reveal">
               <div className="service-icon">
-                <i class="fa-solid fa-file-invoice"></i>
+                <i className="fa-solid fa-hashtag"></i>
               </div>
-              <h3 className="service-title">Editorial & Print Production</h3>
+              <h3 className="service-title">Social Media Creatives</h3>
               <p className="service-desc">
-                Designing publication layouts, magazine structures, flyers, high-contrast posters, and custom box packagings ready for high-fidelity physical print production.
+                Designing high-engagement posts, story layouts, banner sets, and marketing materials tailored for Instagram, LinkedIn, and other channels.
               </p>
             </div>
             
             <div className="service-card scroll-reveal">
               <div className="service-icon">
-                <i class="fa-solid fa-display"></i>
+                <i className="fa-solid fa-clapperboard"></i>
               </div>
-              <h3 className="service-title">UI/UX Prototype Design</h3>
+              <h3 className="service-title">Motion Graphics</h3>
               <p className="service-desc">
-                Creating gorgeous interface designs, visual mobile dashboard layouts, interaction guides, and web screens in Figma with a key focus on user journey flow.
+                Bringing designs to life with custom 2D/3D animations, title cards, promotional intros, and eye-catching animated visual assets.
+              </p>
+            </div>
+            
+            <div className="service-card scroll-reveal">
+              <div className="service-icon">
+                <i className="fa-solid fa-video"></i>
+              </div>
+              <h3 className="service-title">Video Editing</h3>
+              <p className="service-desc">
+                Crafting premium video content, commercial cuts, social reels, and dynamic sequences complete with sound design and transitions.
+              </p>
+            </div>
+            
+            <div className="service-card scroll-reveal">
+              <div className="service-icon">
+                <i className="fa-solid fa-print"></i>
+              </div>
+              <h3 className="service-title">Print & Marketing Design</h3>
+              <p className="service-desc">
+                Preparing print-ready deliverables including posters, flyers, corporate brochures, business cards, and custom physical packaging layouts.
               </p>
             </div>
           </div>
@@ -606,7 +626,7 @@ export default function App() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                   <p className="testimonial-text">
-                    "Alex transformed our brand from looking like a generic startup to an industry leader. The brand assets and guides provided are incredibly comprehensive, and the attention to detail was exceptional throughout."
+                    "Dev transformed our brand from looking like a generic startup to an industry leader. The brand assets and guides provided are incredibly comprehensive, and the attention to detail was exceptional throughout."
                   </p>
                   <div className="client-info">
                     <span className="client-name">Sarah Jenkins</span>
@@ -625,7 +645,7 @@ export default function App() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                   <p className="testimonial-text">
-                    "Working with Alex on our 3D visual campaigns was an absolute breeze. We were blown away by the creative lighting directions, quick delivery, and the final photorealistic renders. Truly talented visual artist!"
+                    "Working with Dev on our 3D visual campaigns was an absolute breeze. We were blown away by the creative lighting directions, quick delivery, and the final photorealistic renders. Truly talented visual artist!"
                   </p>
                   <div className="client-info">
                     <span className="client-name">Marcus Thorne</span>
@@ -693,17 +713,24 @@ export default function App() {
               
               <div className="contact-details">
                 <div className="info-item">
+                  <div className="info-icon"><i className="fa-solid fa-phone"></i></div>
+                  <div>
+                    <h4>Call Me</h4>
+                    <a href="tel:+919717272810">+91 97172 72810</a>
+                  </div>
+                </div>
+                <div className="info-item">
                   <div className="info-icon"><i className="fa-solid fa-envelope"></i></div>
                   <div>
                     <h4>Email Me</h4>
-                    <a href="mailto:alex@morgan.design">alex@morgan.design</a>
+                    <a href="mailto:devduggal7741@gmail.com">devduggal7741@gmail.com</a>
                   </div>
                 </div>
                 <div className="info-item">
                   <div className="info-icon"><i className="fa-solid fa-location-dot"></i></div>
                   <div>
                     <h4>Studio Location</h4>
-                    <span>San Francisco, California (Available globally)</span>
+                    <span>Dwarka More, New Delhi, India</span>
                   </div>
                 </div>
               </div>
@@ -711,10 +738,10 @@ export default function App() {
               <div className="social-networks">
                 <h4>Follow My Work:</h4>
                 <div className="social-icons">
-                  <a href="#" aria-label="Alex's Dribbble profile"><i className="fa-brands fa-dribbble"></i></a>
-                  <a href="#" aria-label="Alex's Behance profile"><i className="fa-brands fa-behance"></i></a>
-                  <a href="#" aria-label="Alex's LinkedIn profile"><i className="fa-brands fa-linkedin-in"></i></a>
-                  <a href="#" aria-label="Alex's Instagram profile"><i className="fa-brands fa-instagram"></i></a>
+                  <a href="#" aria-label="Dev's Dribbble profile"><i className="fa-brands fa-dribbble"></i></a>
+                  <a href="#" aria-label="Dev's Behance profile"><i className="fa-brands fa-behance"></i></a>
+                  <a href="#" aria-label="Dev's LinkedIn profile"><i className="fa-brands fa-linkedin-in"></i></a>
+                  <a href="#" aria-label="Dev's Instagram profile"><i className="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -759,10 +786,12 @@ export default function App() {
                       value={formProjectType}
                       onChange={(e) => setFormProjectType(e.target.value)}
                     >
-                      <option value="brand">Brand Strategy & Identity</option>
-                      <option value="3d">3D Illustration / Model</option>
-                      <option value="print">Editorial & Print Layout</option>
-                      <option value="ui">UI/UX & Web Prototype</option>
+                      <option value="graphic">Graphic Design</option>
+                      <option value="branding">Branding & Logo Design</option>
+                      <option value="social">Social Media Creatives</option>
+                      <option value="motion">Motion Graphics</option>
+                      <option value="video">Video Editing</option>
+                      <option value="print">Print & Marketing Design</option>
                       <option value="other">Other Design Projects</option>
                     </select>
                   </div>
@@ -792,7 +821,7 @@ export default function App() {
                 <i className="fa-solid fa-circle-check"></i>
                 <div>
                   <h4>Message Sent!</h4>
-                  <p>Thank you, Alex will respond within 24 hours.</p>
+                  <p>Thank you, Dev will respond within 24 hours.</p>
                 </div>
               </div>
             </div>
@@ -805,7 +834,7 @@ export default function App() {
         <div className="container footer-container">
           <div className="footer-top">
             <a href="#home" className="logo">
-              ALEX<span>.</span>DESIGN
+              DEV<span>.</span>DESIGN
             </a>
             <div className="footer-links">
               <a href="#home">Home</a>
@@ -820,7 +849,7 @@ export default function App() {
           <div className="footer-divider"></div>
           
           <div className="footer-bottom">
-            <p>&copy; 2026 ALEX.DESIGN. All rights reserved. Created with passion.</p>
+            <p>&copy; 2026 DEV.DESIGN. All rights reserved. Created with passion.</p>
             <a href="#home" className="back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
               <span>Back to Top</span>
               <i className="fa-solid fa-arrow-up"></i>
@@ -852,7 +881,7 @@ export default function App() {
                   </div>
                   <div className="meta-item">
                     <span className="meta-label"><i className="fa-solid fa-calendar"></i> Delivered</span>
-                    <span id="modalProjectDate" class="meta-value">{selectedProject.date}</span>
+                    <span id="modalProjectDate" className="meta-value">{selectedProject.date}</span>
                   </div>
                   <div className="meta-item">
                     <span className="meta-label"><i className="fa-solid fa-screwdriver-wrench"></i> Tools</span>
